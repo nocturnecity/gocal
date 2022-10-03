@@ -66,8 +66,8 @@ func Test_Parse(t *testing.T) {
 	assert.Equal(t, "0", gc.Events[0].Attendees[0].CustomAttributes["X-NUM-GUESTS"])
 	assert.Equal(t, "\"Not interested\"", gc.Events[0].Attendees[0].CustomAttributes["X-RESPONSE-COMMENT"])
 	assert.Equal(t, "John Connor", gc.Events[0].Attendees[1].Cn)
-	assert.Equal(t, 0, len(gc.Events[0].CustomAttributes))
-	assert.Equal(t, 2, len(gc.Events[1].CustomAttributes))
+	assert.Equal(t, 1, len(gc.Events[0].CustomAttributes))
+	assert.Equal(t, 3, len(gc.Events[1].CustomAttributes))
 	assert.Equal(t, "#abc123", gc.Events[1].CustomAttributes["X-COLOR"])
 }
 

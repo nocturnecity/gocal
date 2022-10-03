@@ -338,12 +338,10 @@ func (gc *Gocal) parseEvent(l *Line) error {
 		gc.buffer.Comment = l.Value
 	default:
 		key := strings.ToUpper(l.Key)
-		if strings.HasPrefix(key, "X-") {
-			if gc.buffer.CustomAttributes == nil {
-				gc.buffer.CustomAttributes = make(map[string]string)
-			}
-			gc.buffer.CustomAttributes[key] = l.Value
+		if gc.buffer.CustomAttributes == nil {
+			gc.buffer.CustomAttributes = make(map[string]string)
 		}
+		gc.buffer.CustomAttributes[key] = l.Value
 	}
 
 	return nil
