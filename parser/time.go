@@ -22,7 +22,7 @@ func ParseTime(s string, params map[string]string, ty int, allday bool, allDayTZ
 
 	format := ""
 
-	if params["VALUE"] == "DATE" || len(s) == 8 {
+	if len(s) == 8 {
 		/*
 			Reference: https://icalendar.org/iCalendar-RFC-5545/3-3-4-date.html
 			DATE values are a specific format.  They should not include time information
